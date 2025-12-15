@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { AnimatedCounter } from "@/components/ui/CountUp";
 
@@ -126,7 +126,6 @@ function TechCategory({
 
 export function Clients() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   const [hoveredClient, setHoveredClient] = useState<string | null>(null);
 
   return (
@@ -158,7 +157,7 @@ export function Clients() {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24"
         >
-          {stats.map((stat, i) => (
+          {stats.map((stat) => (
             <AnimatedCounter
               key={stat.label}
               value={stat.value}

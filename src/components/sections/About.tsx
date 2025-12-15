@@ -148,7 +148,6 @@ export function About() {
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
                 viewport={{ once: true }}
                 animate={{
                   y: [0, -15, 0],
@@ -165,7 +164,6 @@ export function About() {
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4 }}
                 viewport={{ once: true }}
                 animate={{
                   y: [0, 15, 0],
@@ -182,7 +180,6 @@ export function About() {
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5 }}
                 viewport={{ once: true }}
                 animate={{
                   y: [0, -10, 0],

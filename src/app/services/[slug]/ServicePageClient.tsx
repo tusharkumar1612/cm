@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
-  ArrowRight,
   Palette,
   Code2,
   Server,
@@ -129,7 +128,7 @@ function TechCard({
   );
 }
 
-export function ServicePageClient({ service, slug }: ServicePageClientProps) {
+export function ServicePageClient({ service }: ServicePageClientProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -371,4 +370,5 @@ export function ServicePageClient({ service, slug }: ServicePageClientProps) {
     </div>
   );
 }
+
 

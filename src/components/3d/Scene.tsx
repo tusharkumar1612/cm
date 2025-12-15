@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { OrbitControls, Float, Stars, Sparkles, Environment } from "@react-three/drei";
+import { OrbitControls, Float, Stars, Sparkles } from "@react-three/drei";
 import { FloatingGeometry } from "./FloatingGeometry";
 import { ParticleField } from "./ParticleField";
 import { NeuralNetwork } from "./NeuralNetwork";

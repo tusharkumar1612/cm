@@ -52,7 +52,7 @@ export function TechOrbit({ radius = 5 }: TechOrbitProps) {
       </mesh>
 
       {/* Tech icons */}
-      {icons.map((tech, i) => (
+      {icons.map((tech) => (
         <Float
           key={tech.name}
           speed={2}
@@ -122,4 +122,5 @@ export function TechOrbit({ radius = 5 }: TechOrbitProps) {
     </group>
   );
 }
+
 

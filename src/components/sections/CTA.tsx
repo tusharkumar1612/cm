@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
-import { Sparkles, ArrowRight, Rocket, Code2, Zap, Star, Check } from "lucide-react";
+import { Sparkles, Rocket, Code2, Zap, Star, Check } from "lucide-react";
 
 const features = [
   { icon: Rocket, text: "Fast Delivery", description: "2x faster than industry avg" },

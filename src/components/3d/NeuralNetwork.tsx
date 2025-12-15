@@ -127,3 +127,4 @@ export function NeuralNetwork({ count = 50, radius = 8 }: NeuralNetworkProps) {
   );
 }
 
+

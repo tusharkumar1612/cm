@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useSpring, useTransform } from "framer-motion";
+import { motion, useInView, useSpring } from "framer-motion";
 
 interface CountUpProps {
   end: number;
-  duration?: number;
   suffix?: string;
   prefix?: string;
   className?: string;
@@ -14,7 +13,6 @@ interface CountUpProps {
 
 export function CountUp({
   end,
-  duration = 2,
   suffix = "",
   prefix = "",
   className,
@@ -23,12 +21,17 @@ export function CountUp({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [displayValue, setDisplayValue] = useState(0);
 
   const springConfig = { damping: 30, stiffness: 100 };
   const motionValue = useSpring(0, springConfig);
-  const rounded = useTransform(motionValue, (latest) =>
-    decimals > 0 ? latest.toFixed(decimals) : Math.round(latest)
-  );
+
+  useEffect(() => {
+    const unsubscribe = motionValue.on("change", (latest) => {
+      setDisplayValue(decimals > 0 ? parseFloat(latest.toFixed(decimals)) : Math.round(latest));
+    });
+    return () => unsubscribe();
+  }, [motionValue, decimals]);
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -40,7 +43,7 @@ export function CountUp({
   return (
     <span ref={ref} className={className}>
       {prefix}
-      <motion.span>{rounded}</motion.span>
+      <span>{decimals > 0 ? displayValue.toFixed(decimals) : displayValue}</span>
       {suffix}
     </span>
   );

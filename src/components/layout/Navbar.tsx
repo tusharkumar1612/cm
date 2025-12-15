@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown, Zap } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const navItems = [

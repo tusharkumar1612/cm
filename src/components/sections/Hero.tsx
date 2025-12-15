@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { Scene } from "@/components/3d/Scene";
-import { ArrowDown, Play, Sparkles, Zap, Code2, Rocket } from "lucide-react";
+import { Play, Sparkles, Zap, Code2, Rocket } from "lucide-react";
 
 const stats = [
   { value: "150+", label: "Projects Delivered", icon: Rocket },
